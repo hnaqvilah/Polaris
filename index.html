@@ -67,23 +67,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
   </div>
 </header>
-    <button onclick="translatePage()">Translate</button>
 
-  <script>
-  function translatePage() {
-    var apiKey = 'AIzaSyAmWaLIX-x0bfGFyrocAd2zJnJv-n2YSBE';
-    var sourceText = document.getElementById('source-text').innerHTML;
-    var targetLanguage = 'ar'; // or the target language you want to translate to
-    var translateUrl = 'https://translation.googleapis.com/language/translate/v2?key=' + apiKey + '&q=' + sourceText + '&target=' + targetLanguage;
-
-    fetch(translateUrl)
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('translated-text').innerHTML = data.data.translations[0].translatedText;
-      })
-      .catch(error => console.log(error));
-  }
-</script>
 
 <script>
 var slideIndex = 1;
