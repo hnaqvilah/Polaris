@@ -41,6 +41,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <p>CONTACT</p>
   </a>
 </nav>
+  
 
 
 <!-- Navbar on small screens (Hidden on medium and large screens) -->
@@ -49,6 +50,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
     <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
     <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+    <button onclick="translatePage()" class="w3-bar-item w3-button" style="width:25% !important">Translate</button>
   </div>
 </div>
 
@@ -62,6 +64,22 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <img class="mySlides" src="primo.jpg" style="width:100%">
     <img class="mySlides" src="koolit.jpg" style="width:100%">
     <img class="mySlides" src="ikon.jpg" style="width:100%">
+    
+    <script>
+  function translatePage() {
+    var apiKey = 'YOUR_API_KEY';
+    var sourceText = document.getElementById('source-text').innerHTML;
+    var targetLanguage = 'ar'; // or the target language you want to translate to
+    var translateUrl = 'https://translation.googleapis.com/language/translate/v2?key=' + apiKey + '&q=' + sourceText + '&target=' + targetLanguage;
+
+    fetch(translateUrl)
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('translated-text').innerHTML = data.data.translations[0].translatedText;
+      })
+      .catch(error => console.log(error));
+  }
+</script>
 
     <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
     <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
