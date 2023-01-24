@@ -69,7 +69,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     
     <script>
   function translatePage() {
-    var apiKey = 'YOUR_API_KEY';
+    var apiKey = 'AIzaSyAmWaLIX-x0bfGFyrocAd2zJnJv-n2YSBE';
     var sourceText = document.getElementById('source-text').innerHTML;
     var targetLanguage = 'ar'; // or the target language you want to translate to
     var translateUrl = 'https://translation.googleapis.com/language/translate/v2?key=' + apiKey + '&q=' + sourceText + '&target=' + targetLanguage;
@@ -114,11 +114,12 @@ function showDivs(n) {
     <h2 class="w3-text-light-grey">About Us</h2>
     <hr style="width:200px" class="w3-opacity">
     
-<p>Welcome to Polaris Industries, a leading provider of industrial kitchen equipment. 
+<p id="source text"> Welcome to Polaris Industries, a leading provider of industrial kitchen equipment. 
 We specialize in supplying state-of-the-art equipment for commercial kitchens, restaurants,hotels and other food service establishments. Our team is dedicated to providing high-quality 
 products and services to meet our clients' unique needs. We offer a wide range of equipment including ovens,fryers, grills, and refrigeration units. Our global network of suppliers allows us to offer the most advanced and efficient equipment.
 We are committed to sustainability and work only with suppliers who share this commitment. 
 Trust us to provide you with the best equipment, service, and support to take your business to the next level. Contact us today!</p>
+    <p id="translated text"></p>
     
 <h3 class="w3-padding-16 w3-text-light-grey">Our Reach</h3>
     <p class="w3-wide">Middle East</p>
@@ -226,7 +227,8 @@ Trust us to provide you with the best equipment, service, and support to take yo
       <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: 514-443-5747 </p>
       <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: Polaris@industriespolaris.ca</p>
     </div><br>
-    <p>Let's get in touch. Send us a message:</p>
+    <p id="source text">Let's get in touch. Send us a message:</p>
+    <p id="translated text"></p>
 
     
       </p>
